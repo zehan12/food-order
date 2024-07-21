@@ -1,7 +1,12 @@
 import { Model, model, models, Schema } from "mongoose";
 
 export interface IRestaurant {
-    name: string;
+    email: String;
+    password: String;
+    restaurantName: string;
+    city: string;
+    address: string;
+    contactNumber: string;
 }
 
 export interface IRestaurantDocument extends IRestaurant, Document {
@@ -11,7 +16,12 @@ export interface IRestaurantDocument extends IRestaurant, Document {
 
 const restaurantSchema = new Schema<IRestaurantDocument>(
     {
-        name: String,
+        email: String,
+        password: String,
+        restaurantName: String,
+        city: String,
+        address: String,
+        contactNumber: String,
     },
     {
         timestamps: true,
