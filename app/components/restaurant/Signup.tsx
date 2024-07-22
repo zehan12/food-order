@@ -8,8 +8,10 @@ import toast from "react-hot-toast";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { FULFILLED } from "@/app/constants";
 import { createRestaurantRequest } from "@/app/redux/restaurant/restaurant.slice";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
+    const router = useRouter();
     const dispatch = useAppDispatch();
     const createRestaurantStatus = useAppSelector(
         (state) => state.restaurant.createRestaurantStatus
@@ -56,6 +58,7 @@ const Signup = () => {
     useEffect(() => {
         if (createRestaurantStatus === FULFILLED) {
             toast.success("Restaurant created successfully.");
+            router.push("/restaurant/dashboard");
         }
     }, [createRestaurantStatus]);
 

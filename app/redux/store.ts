@@ -47,7 +47,9 @@ const persistConfig = {
         typeof window !== "undefined"
             ? createWebStorage("local")
             : createNoopStorage(),
-    whitelist: ["restaurant"],
+    whitelist: [
+        "restaurant"
+    ],
 };
 
 // Create a persisted reducer
