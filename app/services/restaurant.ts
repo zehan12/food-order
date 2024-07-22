@@ -1,18 +1,17 @@
 import axios from "axios";
-import { createRestaurantType } from "../types/restaurant";
+import { RestaurantType } from "../types/restaurant";
 
-// Update the function to return the correct type
 export const createRestaurant = async (
-    restaurant: createRestaurantType
+    restaurant: RestaurantType
 ): Promise<any> => {
     try {
         const response = await axios.post(
             "http://localhost:3000/api/restaurant",
             restaurant
         );
-        return response; // Return the full AxiosResponse
+        return response;
     } catch (error) {
         console.error("Error creating restaurant:", error);
-        throw error; // Rethrow or handle the error as needed
+        throw error;
     }
 };

@@ -3,7 +3,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
-import { createRestaurantType, RestaurantType } from "@/app/types/restaurant";
+import { RestaurantType } from "@/app/types/restaurant";
 import toast from "react-hot-toast";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { FULFILLED } from "@/app/constants";
@@ -35,24 +35,7 @@ const Signup = () => {
     };
 
     const handleSubmit = async () => {
-        const {
-            email,
-            password,
-            restaurantName,
-            city,
-            address,
-            contactNumber,
-        } = formData;
-        const restaurant: createRestaurantType = {
-            email,
-            password,
-            restaurantName,
-            city,
-            address,
-            contactNumber,
-        };
-
-        dispatch(createRestaurantRequest(restaurant));
+        dispatch(createRestaurantRequest(formData));
     };
 
     useEffect(() => {

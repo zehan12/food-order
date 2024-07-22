@@ -1,11 +1,12 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { createRestaurantActionTypes } from "./restaurant.slice";
 import { createRestaurant } from "@/app/services/restaurant";
+import { RestaurantType } from "@/app/types/restaurant";
 
 // Define the action type
 interface CreateRestaurantAction {
     type: typeof createRestaurantActionTypes.REQUEST;
-    payload: any;
+    payload: RestaurantType;
 }
 
 function* workerToCreateRestaurant(

@@ -11,7 +11,7 @@ interface RestaurantState {
     restaurantName: string;
     city: string;
     address: string;
-    contactNumber: number;
+    contactNumber: string;
     createRestaurantStatus: string;
 }
 
@@ -20,7 +20,7 @@ const initialState: RestaurantState = {
     restaurantName: "",
     city: "",
     address: "",
-    contactNumber: 0,
+    contactNumber: "",
     createRestaurantStatus: IDLE,
 };
 
@@ -65,7 +65,7 @@ const createRestaurantFulfilledReducer = (
     state.email = action.payload.data.email;
     state.city = action.payload.data.city;
     state.address = action.payload.data.address;
-    state.contactNumber = +action.payload.data.contactNumber;
+    state.contactNumber = action.payload.data.contactNumber;
     state.createRestaurantStatus = FULFILLED;
 };
 
