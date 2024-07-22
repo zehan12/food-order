@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { createRestaurantActionTypes } from "./restaurant.slice";
-import { createRestaurant } from "@/app/services/restaurant";
-import { RestaurantType } from "@/app/types/restaurant";
+import { createRestaurant } from "@/services/restaurant";
+import { RestaurantType } from "@/types/restaurant";
 
 // Define the action type
 interface CreateRestaurantAction {

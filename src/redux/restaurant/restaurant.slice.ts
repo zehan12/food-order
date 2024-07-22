@@ -4,7 +4,7 @@ import {
     createAction,
     createSlice,
 } from "@reduxjs/toolkit";
-import { FULFILLED, IDLE, PENDING, REJECTED } from "@/app/constants";
+import { FULFILLED, IDLE, PENDING, REJECTED } from "@/constants";
 
 interface RestaurantState {
     email: string;

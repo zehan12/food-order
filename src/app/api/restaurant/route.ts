@@ -1,6 +1,6 @@
-import { connectToMongoDB } from "@/app/lib/db";
-import { Restaurant } from "@/app/models/restaurant";
-import { restaurantSchema } from "@/app/zod";
+import { connectToMongoDB } from "@/lib/db";
+import { Restaurant } from "@/models/restaurant";
+import { restaurantSchema } from "@/zod";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function GET() {

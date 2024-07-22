@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from "react"
-import Login from "../components/restaurant/Login";
-import Signup from "../components/restaurant/Signup";
+import Login from "@/components/restaurant/Login";
+import Signup from "@/components/restaurant/Signup";
 
 const Restaurant = () => {
     const [login, setLogin] = useState<boolean>(false);

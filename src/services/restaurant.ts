@@ -1,5 +1,5 @@
 import axios from "axios";
-import { RestaurantType } from "../types/restaurant";
+import { RestaurantType } from "@/types/restaurant";
 
 export const createRestaurant = async (
     restaurant: RestaurantType

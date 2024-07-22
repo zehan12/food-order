@@ -1,13 +1,13 @@
 "use client";
 
 import { ChangeEvent, useEffect, useState } from "react";
-import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
-import { RestaurantType } from "@/app/types/restaurant";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { RestaurantType } from "@/types/restaurant";
 import toast from "react-hot-toast";
-import { useAppDispatch, useAppSelector } from "@/app/hooks";
-import { FULFILLED } from "@/app/constants";
-import { createRestaurantRequest } from "@/app/redux/restaurant/restaurant.slice";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { FULFILLED } from "@/constants";
+import { createRestaurantRequest } from "@/redux/restaurant/restaurant.slice";
 import { useRouter } from "next/navigation";
 
 const Signup = () => {

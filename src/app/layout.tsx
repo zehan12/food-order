@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import { Toaster } from "react-hot-toast";
-import { PersistProvider, ReduxProvider } from "@/app/context";
+import { PersistProvider, ReduxProvider } from "@/context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

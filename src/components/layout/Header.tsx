@@ -1,11 +1,11 @@
 "use client";
-import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Button } from "../ui/button";
-import { resetRestaurantState } from "@/app/redux/restaurant/restaurant.slice";
-import { IDLE } from "@/app/constants";
+import { resetRestaurantState } from "@/redux/restaurant/restaurant.slice";
+import { IDLE } from "@/constants";
 
 const Header = () => {
     const router = useRouter();
