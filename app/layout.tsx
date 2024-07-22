@@ -19,16 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ReduxProvider>
-        <PersistProvider>
-          <body>
+      <body>
+        <ReduxProvider>
+          <PersistProvider>
             <Header />
             {children}
             <Footer />
             <Toaster />
-          </body>
-        </PersistProvider>
-      </ReduxProvider>
+          </PersistProvider>
+        </ReduxProvider>
+      </body>
     </html>
   );
 }
