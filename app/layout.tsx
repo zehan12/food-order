@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import { Toaster } from "react-hot-toast";
-
+import { PersistProvider, ReduxProvider } from "@/app/context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,12 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-        <Footer />
-        <Toaster />
-      </body>
+      <ReduxProvider>
+        <PersistProvider>
+          <body>
+            <Header />
+            {children}
+            <Footer />
+            <Toaster />
+          </body>
+        </PersistProvider>
+      </ReduxProvider>
     </html>
   );
 }

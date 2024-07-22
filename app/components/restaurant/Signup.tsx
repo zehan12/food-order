@@ -1,13 +1,19 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { createRestaurant } from "@/app/services/restaurant";
 import { createRestaurantType, RestaurantType } from "@/app/types/restaurant";
 import toast from "react-hot-toast";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { FULFILLED } from "@/app/constants";
+import { createRestaurantRequest } from "@/app/redux/restaurant/restaurant.slice";
 
 const Signup = () => {
+    const dispatch = useAppDispatch();
+    const createRestaurantStatus = useAppSelector(
+        (state) => state.restaurant.createRestaurantStatus
+    );
     const [formData, setFormData] = useState<RestaurantType>({
         email: "",
         password: "",
@@ -43,11 +49,15 @@ const Signup = () => {
             address,
             contactNumber,
         };
-        const response = await createRestaurant(restaurant);
-        if (response.status === 200) {
+
+        dispatch(createRestaurantRequest(restaurant));
+    };
+
+    useEffect(() => {
+        if (createRestaurantStatus === FULFILLED) {
             toast.success("Restaurant created successfully.");
         }
-    };
+    }, [createRestaurantStatus]);
 
     return (
         <>
