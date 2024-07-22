@@ -1,8 +1,8 @@
 "use client";
 
 import { ChangeEvent, useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/app/components/ui/button";
+import { Input } from "@/app/components/ui/input";
 import { createRestaurantType, RestaurantType } from "@/app/types/restaurant";
 import toast from "react-hot-toast";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
